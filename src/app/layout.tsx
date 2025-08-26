@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Mobilenav from "./component/Mobilenav";
+import { Mobilenav } from "./component/Mobilenav";
+import TopHeader from "./component/top-header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,10 +16,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex min-h-screen flex-col font-sans antialiased bg-gray-50 text-gray-900">
+        {/* top header  */}
+        <TopHeader />
+<Mobilenav />
         <header className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-4 shadow-md">
           <div className="container mx-auto flex justify-between items-center">
             <h1 className="text-2xl font-bold">My Awesome App</h1>
-            <Mobilenav />
+           
             <nav className="hidden md:flex items-center space-x-8"> {/* Changed to flex to align search/cart */}
               <ul className="flex space-x-6">
                 <li>
