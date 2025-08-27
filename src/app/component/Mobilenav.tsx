@@ -11,6 +11,8 @@ export const Mobilenav: React.FC = () => { // Changed to named export
     setIsOpen(!isOpen);
   };
 
+  // Dropdown state for Laptops
+  const [laptopDropdown, setLaptopDropdown] = useState(false);
 
   const navigateTo = (path: string) => {
     window.location.href = path; 
@@ -116,14 +118,41 @@ export const Mobilenav: React.FC = () => { // Changed to named export
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => navigateTo("/laptops")}
-                    className="flex items-center w-full px-4 py-2 rounded hover:bg-neutral-800 transition-colors">
-                    <span className="mr-3">
+                  <button
+                    onClick={() => setLaptopDropdown((open) => !open)}
+                    className="flex items-center w-full px-4 py-2 rounded hover:bg-neutral-800 transition-colors justify-between"
+                    aria-expanded={laptopDropdown}
+                    aria-controls="laptop-submenu"
+                  >
+                    <span className="flex items-center">
                       {/* Laptop icon */}
-                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6h18M4 8v8a2 2 0 002 2h8a2 2 0 002-2V8" /></svg>
+                      <svg className="h-5 w-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6h18M4 8v8a2 2 0 002 2h8a2 2 0 002-2V8" /></svg>
+                      Laptops
                     </span>
-                    Laptops
+                    <svg className={`h-4 w-4 ml-2 transition-transform ${laptopDropdown ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
                   </button>
+                  {laptopDropdown && (
+                    <ul id="laptop-submenu" className="ml-8 mt-1 space-y-1">
+                      <li>
+                        <button onClick={() => navigateTo("/laptops/gaming")}
+                          className="flex items-center w-full px-4 py-2 rounded hover:bg-neutral-800 transition-colors text-sm">
+                          Gaming Laptops
+                        </button>
+                      </li>
+                      <li>
+                        <button onClick={() => navigateTo("/laptops/business")}
+                          className="flex items-center w-full px-4 py-2 rounded hover:bg-neutral-800 transition-colors text-sm">
+                          Business Laptops
+                        </button>
+                      </li>
+                      <li>
+                        <button onClick={() => navigateTo("/laptops/student")}
+                          className="flex items-center w-full px-4 py-2 rounded hover:bg-neutral-800 transition-colors text-sm">
+                          Student Laptops
+                        </button>
+                      </li>
+                    </ul>
+                  )}
                 </li>
                 <li>
                   <button onClick={() => navigateTo("/desktops")}
