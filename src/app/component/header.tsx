@@ -9,7 +9,11 @@ export const Header = () => {
         <header className="hidden md:flex flex-col bg-black text-white sticky top-0 z-50">
             <div className="container mx-auto flex justify-between items-center px-6 py-5">
                 {/* Logo */}
-                <div className="h-8 w-8 bg-white rounded-full"></div>
+                <div className="h-10 w-10 bg-white rounded-full shadow shadow-orange-400">
+                    <a href="/">
+                        <img src="logo/pc-logo.jpg " alt="Logo" className="h-full w-full object-cover rounded-full" />
+                    </a>
+                </div>
                 {/* Nav Menu */}
                 <nav className="flex items-center space-x-10 text-sm font-medium">
                     <a href="/" className="hover:text-gray-300">Home</a>

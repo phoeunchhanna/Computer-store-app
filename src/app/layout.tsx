@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex min-h-screen flex-col font-sans antialiased bg-gray-800 text-gray-900">
+      <body className="flex min-h-screen flex-col font-sans antialiased  text-gray-900">
         {/* top header  */}
         <TopHeader />
         <Mobilenav />
@@ -26,7 +26,7 @@ export default function RootLayout({
 
 
         {/* main content   */}
-        <main>
+        <main className="flex-grow bg-gray-700 text-white">
           {children}
         </main>
         {/* footer content */}

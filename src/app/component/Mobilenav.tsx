@@ -22,11 +22,11 @@ export const Mobilenav: React.FC = () => { // Changed to named export
   return (
     <>
       {/* Mobile header bar */}
-      <div className="md:hidden w-full flex items-center justify-between px-3 py-2 bg-black border-b border-red-900">
+      <div className="md:hidden w-full flex items-center justify-between px-3 py-2 bg-black border-b border-red-900 sticky top-0 z-50">
         {/* Hamburger menu button */}
         <button
           onClick={toggleMenu}
-          className="text-white hover:text-blue-200 focus:outline-none p-2 rounded-md"
+          className="text-red-600 hover:text-blue-200 focus:outline-none p-2 rounded-md"
           aria-label="Toggle navigation"
         >
           <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,12 +34,8 @@ export const Mobilenav: React.FC = () => { // Changed to named export
           </svg>
         </button>
         {/* Logo */}
-        <span className="ml-2 mr-2">
-          {/* Example logo: replace with your logo if needed */}
-          <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" strokeWidth="2" />
-            <circle cx="12" cy="12" r="4" strokeWidth="2" />
-          </svg>
+        <span className="ml-2 mr-2 h-10 w-10">
+         <img src="logo/pc-logo.jpg " alt="Logo" className="h-full w-full object-cover rounded-full" />
         </span>
         {/* Search bar */}
         <div className="flex-1 mx-2">
@@ -49,13 +45,13 @@ export const Mobilenav: React.FC = () => { // Changed to named export
               placeholder="Search"
               className="w-full rounded-full bg-neutral-800 text-white pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 placeholder-gray-400"
             />
-            <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </div>
         </div>
         {/* Cart icon */}
-        <a href="/cart" className="relative text-white hover:text-blue-200 transition-colors ml-2">
+        <a href="/cart" className="relative text-red-600 hover:text-blue-200 transition-colors ml-2">
           <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
           </svg>
@@ -63,7 +59,7 @@ export const Mobilenav: React.FC = () => { // Changed to named export
         {/* Logout icon */}
         <button
           onClick={() => navigateTo("/logout")}
-          className="text-white hover:text-red-400 transition-colors ml-2"
+          className="text-red-600 hover:text-red-400 transition-colors ml-2"
           aria-label="Logout"
         >
           <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
